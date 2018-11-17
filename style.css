@@ -1,0 +1,68 @@
+hmtl {
+    height: 100%;
+}
+body {
+    height: 100%;
+    font-size: 18px;
+    font-family: 'Raleway', sans-serif;
+    background: linear-gradient(white, #1E619B)fixed;
+}
+
+nav {
+    text-align: center;
+}
+
+nav > ul {
+    list-style: none;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    background: white;
+}
+
+nav >ul >li {
+    float: left;
+    width: 200px;
+    height:70px;
+    line-height: 60px;
+    position: relative;
+    text-transform: uppercase;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+}
+
+nav > ul >li:hover {
+    background: #ddd;
+}
+
+ul.drop-menu {
+    position: absolute;
+    top: 100%;
+    left: 0%;
+    width: 100%;
+    padding: 0;
+}
+
+ul.drop-menu li {
+    background: #ddd;
+    color: black;
+}
+
+ul.drop-menu li:hover {
+    background-color: #b2b5b7;
+}
+
+ul.drop-menu li:last-child {
+    border-radius: 0px 0px 5px 5px;
+}
+
+/* Hides Drop Menu unless Triggered */
+ul.drop-menu li {
+    display: none;
+}
+
+li:hover > ul.drop-menu li {
+    display: block;
+}
