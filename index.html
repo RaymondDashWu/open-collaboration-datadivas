@@ -9,24 +9,24 @@
     <link rel="stylesheet" href="style.css">
     <!--Import Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <!--Drop Down NAV BAR-->
-    <nav>
+    <nav class = "topnav" id = "myTopnav">
         <ul>
             <li> Astronomy
                 <ul class = "drop-menu astronomy-menu">
-                    <li>blank</li>
-                    <li>blank</li>
-                    <li>blank</li>
+                    <li><a href="https://observer.globe.gov/">Globe Observer</a></li>
+                    <li><a href="https://cosmoquest.org/x/science/mars/">Mars Mapper</a></li>
                 </ul>
             </li>
 
             <li> Biology
                 <ul class = "drop-menu biology-menu">
+                    <li><a href="https://www.usgs.gov/staff-profiles/nathaniel-hitt">eTrout</a></li>
                     <li>blank</li>
-                    <li>blank</li>
-                    <li>blank</li>
+
                 </ul>
             </li>
 
@@ -74,10 +74,17 @@
                     <li>blank</li>
                 </ul>
             </li>
+            <li class = "hamburger">
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-bars"></i>
+                  </a>
+            </li>
+
         </ul>
     </nav>
 
-<!--  -->
+
+
     <div class="login">
         <form class = "form">
             <input type="text" placeholder="Username">
@@ -99,6 +106,8 @@
         <li></li>
         <li></li>
     </div>
+<script src = "scripts.js">
 
+</script>
 </body>
 </html>
