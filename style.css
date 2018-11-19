@@ -72,9 +72,9 @@ li:hover > ul.drop-menu {
     -webkit-animation: menu1 300ms ease-in-out forwards;
 }
 
-.topnav {
+/* .topnav {
     overflow: hidden;
-}
+} */
 .topnav .icon {
     display: none;
 }
