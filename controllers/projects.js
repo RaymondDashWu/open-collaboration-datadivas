@@ -1,16 +1,17 @@
 const Project = require('../models/project');
 
 module.exports = (app) => {
-
-    app.get('/', function (req, res) {
-        Project.find({})
-            .then(projects => {
-                res.render("index.html");
-            })
-            .catch(err => {
-                console.log(err.message);
-            });
-    })
+    // app.get('/', function (req, res) {
+    //     Project.find({})
+    //         .then(projects => {
+    //             res.render("index.handlebars", {projects});
+    //             // can't pass variables through without handlebars
+    //             // 
+    //         })
+    //         .catch(err => {
+    //             console.log(err.message);
+    //         });
+    // })
 
     // CREATE
     app.post('/projects/new', (req, res) => {
