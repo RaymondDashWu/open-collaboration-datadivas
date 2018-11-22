@@ -4,11 +4,13 @@ module.exports = (app) => {
     // Render index of all projects
     app.get('/', function (req, res) {
         Project.find({})
+        // Changed index.hbs to main.hbs
             .then(projects => {
-                res.render("index.handlebars", {
+                res.render("main.hbs", {
                     projects
                 });
-                // TODO: Does not exist yet. Main index.html to convert to handlebars
+                // TODO: Does not exist yet. Main index.html to convert to hbs
+                // index.html is now main.hbs - anna
             })
             .catch(err => {
                 console.log(err.message);
@@ -17,7 +19,7 @@ module.exports = (app) => {
 
     // CREATE a new project
     app.get('/projects/new', (req, res) => {
-        res.render("projects-new.handlebars")
+        res.render("projects-new.hbs")
         // TODO: Make a form for new projects. Look at Project model to see what needs to be there
     });
 
@@ -69,7 +71,7 @@ module.exports = (app) => {
         // LOOK UP THE POST
         Project.findById(req.params.id)
             .then(project => {
-                res.render("project-show.handlebars");
+                res.render("project-show.hbs");
                 // TODO: This will show a single project. Reference wireframe
                 return res.status(200);
             })
@@ -84,7 +86,7 @@ module.exports = (app) => {
     // EDIT a single project
     app.get('/projects/:category/:id/edit', function (req, res) {
         Project.findById(req.params.id, function (err, projects) {
-            res.render('projects-edit.handlebars', {
+            res.render('projects-edit.hbs', {
                 projects: projects
             });
             // TODO: Screen to edit an individual project
@@ -118,49 +120,49 @@ module.exports = (app) => {
 
     // Astronomy
     app.get('/astronomy', (req, res) => {
-        res.render("../Astronomy/astronomy.handlebars")
+        res.render("../Astronomy/astronomy.hbs")
         // TODO: Astronomy landing page
     });
 
     // Biology
     app.get('/biology', (req, res) => {
-        res.render("../Biology/biology.handlebars")
+        res.render("../Biology/biology.hbs")
         // TODO: Biology landing page
     });
 
     // Chemistry
     app.get('/chemistry', (req, res) => {
-        res.render("../Chemistry/chemistry.handlebars")
+        res.render("../Chemistry/chemistry.hbs")
         // TODO: Chemistry landing page
     });
 
     // Computer-Science
     app.get('/computer-science', (req, res) => {
-        res.render("../Computer-Science/computer-science.handlebars")
+        res.render("../Computer-Science/computer-science.hbs")
         // TODO: Computer-Science landing page
     });
 
     // Engineering
     app.get('/engineering', (req, res) => {
-        res.render("../Engineering/engineering.handlebars")
+        res.render("../Engineering/engineering.hbs")
         // TODO: Engineering landing page
     });
 
     // Environmental
     app.get('/environmental', (req, res) => {
-        res.render("../Environmental/environmental.handlebars")
+        res.render("../Environmental/environmental.hbs")
         // TODO: Environmental landing page
     });
 
     // Physics
     app.get('/physics', (req, res) => {
-        res.render("../Physics/physics.handlebars")
+        res.render("../Physics/physics.hbs")
         // TODO: Physics landing page
     });
 
     // Psychology
     app.get('/psychology', (req, res) => {
-        res.render("../Psychology/psychology.handlebars")
+        res.render("../Psychology/psychology.hbs")
         // TODO: Psychology landing page
     });
 };
