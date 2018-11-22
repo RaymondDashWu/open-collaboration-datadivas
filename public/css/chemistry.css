@@ -1,3 +1,66 @@
-body {
-    background: pink;
+nav {
+    text-align: center;
+}
+
+nav > ul {
+    list-style: none;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    background: white;
+}
+
+nav >ul >li {
+    float: left;
+    width: 200px;
+    height:70px;
+    line-height: 60px;
+    position: relative;
+    /* text-transform: uppercase; */
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+}
+
+nav > ul >li:hover {
+    background: #bcd2e2;
+}
+
+ul.drop-menu {
+    position: absolute;
+    top: 100%;`
+    left: 0%;
+    width: 100%;
+    padding: 0;
+}
+
+ul.drop-menu li {
+    padding: 15px;
+    line-height: 1.4;
+    font-size: 14px;
+    background: #f9f9f9;
+    color: black;
+}
+
+ul.drop-menu li:hover {
+    background-color: #b2b5b7;
+}
+
+ul.drop-menu li:last-child {
+    border-radius: 0px 0px 5px 5px;
+}
+
+/* Hides Drop Menu unless Triggered */
+ul.drop-menu li {
+    display: none;
+}
+
+li:hover > ul.drop-menu li {
+    display: block;
+}
+
+li:hover > ul.drop-menu {
+    perspective: 1000px;
+    -webkit-animation: menu1 300ms ease-in-out forwards;
 }
