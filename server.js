@@ -8,10 +8,10 @@ const db = require('./data/platform-db.js');
 const Project = require('./models/project');
 const jwt = require('jsonwebtoken');
 const path = require('path');
+const mongoose = require('mongoose');
 
 app.engine('handlebars', exphbs({defaultLayout: 'index'}));
 app.set('view engine', 'handlebars');
-
 
 // Use Body Parser
 app.use(bodyParser.json());
