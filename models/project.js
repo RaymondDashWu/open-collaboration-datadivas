@@ -7,7 +7,7 @@ const PostSchema = new Schema({
     category: { type: String, required: true },
     title: { type: String, required: true },
     url: { type: String, required: true },
-    summary: { type: String, required: true }
+    summary: { type: String, required: true },
   });
   
   PostSchema.pre("save", function(next) {

@@ -9,10 +9,9 @@ const Project = require('./models/project');
 const jwt = require('jsonwebtoken');
 const path = require('path');
 
-// app.engine('handlebars', exphbs({defaultLayout: 'index'}));
-// app.set('view engine', 'handlebars');
+app.engine('handlebars', exphbs({defaultLayout: 'index'}));
+app.set('view engine', 'handlebars');
 
-app.use(express.static(__dirname+'style.css'));
 
 // Use Body Parser
 app.use(bodyParser.json());
