@@ -4,8 +4,8 @@ const User = require("../models/user");
 module.exports = (app) => {
     // SIGN UP FORM
     app.get("/sign-up", (req, res) => {
-        // TODO: sign-up page hbs
-        res.render("sign-up");
+        // TODO: sign-up page handlebars
+        res.render("sign-up.handlebars");
     });
 
     app.post("/sign-up", (req, res) => {
@@ -33,8 +33,8 @@ module.exports = (app) => {
     });
 
     app.get('/login', (req, res) => {
-        // TODO: login page
-        res.render('login.hbs');
+        // TODO: login page if needed
+        res.render('login.handlebars');
     });
 
     app.post("/login", (req, res) => {
