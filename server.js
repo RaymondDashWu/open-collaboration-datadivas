@@ -10,9 +10,11 @@ const Project = require('./models/project');
 const jwt = require('jsonwebtoken');
 const path = require('path');
 
+// Database
 const mongoose = require('mongoose');
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/data-divas', {useNewUrlParser: true});
 
+// Handlebars
 app.engine('handlebars', exphbs({defaultLayout: 'index'}));
 app.set('view engine', 'handlebars');
 
@@ -26,7 +28,7 @@ app.use(expressValidator());
 const projects = require('./controllers/projects.js')(app);
 
 app.get('/',function(req,res){
-  res.sendFile(path.join(__dirname+'/index.html'));
+  res.sendFile(path.join(__dirname+'/main.hbs'));
   //__dirname : It will resolve to your project folder.
 });
 
