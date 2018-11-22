@@ -8,7 +8,9 @@ const db = require('./data/platform-db.js');
 const Project = require('./models/project');
 const jwt = require('jsonwebtoken');
 const path = require('path');
+
 const mongoose = require('mongoose');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/data-divas', {useNewUrlParser: true});
 
 app.engine('handlebars', exphbs({defaultLayout: 'index'}));
 app.set('view engine', 'handlebars');
