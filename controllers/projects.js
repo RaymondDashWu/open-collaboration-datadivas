@@ -115,4 +115,51 @@ module.exports = (app) => {
             })
     })
 
+    // Astronomy
+    app.get('/astronomy', (req, res) => {
+        res.render("Astronomy/astronomy.handlebars")
+        // TODO: Astronomy landing page
+    });
+
+    // Biology
+    app.get('/biology', (req, res) => {
+        res.render("Biology/biology.handlebars")
+        // TODO: Biology landing page
+    });
+
+    // Chemistry
+    app.get('/chemistry', (req, res) => {
+        res.render("./Chemistry/chemistry.handlebars")
+        // TODO: Chemistry landing page
+    });
+
+    // Computer-Science
+    app.get('/computer-science', (req, res) => {
+        res.render("./Computer-Science/computer-science.handlebars")
+        // TODO: Computer-Science landing page
+    });
+
+    // Engineering
+    app.get('/engineering', (req, res) => {
+        res.render("./Engineering/engineering.handlebars")
+        // TODO: Engineering landing page
+    });
+
+    // Environmental
+    app.get('/environmental', (req, res) => {
+        res.render("./Environmental/environmental.handlebars")
+        // TODO: Environmental landing page
+    });
+
+    // Physics
+    app.get('/physics', (req, res) => {
+        res.render("./Physics/physics.handlebars")
+        // TODO: Physics landing page
+    });
+
+    // Psychology
+    app.get('/psychology', (req, res) => {
+        res.render("./Psychology/psychology.handlebars")
+        // TODO: Psychology landing page
+    });
 };
