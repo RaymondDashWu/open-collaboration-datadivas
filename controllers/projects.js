@@ -26,7 +26,7 @@ module.exports = (app) => {
     app.post("/projects/new", (req, res) => {
         console.log(req.user)
         // if (req.user) {
-       
+
             var project = new Project(req.body);
             //project.author = req.user._id;
             console.log(project.author)
@@ -45,7 +45,7 @@ module.exports = (app) => {
                 .catch(err => {
                     console.log(err.message);
                 });
-        
+
     });
 
     // app.post('/projects/new', (req, res) => {
