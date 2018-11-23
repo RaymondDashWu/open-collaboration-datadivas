@@ -1,7 +1,9 @@
 body {
-    background: red;
+    height: 100%;
+    font-size: 18px;
+    font-family: 'Raleway', sans-serif;
+    background: linear-gradient(white, #6b1028)fixed;
 }
-
 
 nav {
     text-align: center;

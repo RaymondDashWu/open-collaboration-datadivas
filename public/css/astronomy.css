@@ -1,5 +1,4 @@
 /* Nav bar  */
-/* NAV BAR STUFF */
 nav {
     text-align: center;
 }
@@ -19,7 +18,7 @@ nav >ul >li {
     height:70px;
     line-height: 60px;
     position: relative;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     font-size: 16px;
     color: rgba(0, 0, 0, 0.7);
     cursor: pointer;
@@ -31,14 +30,17 @@ nav > ul >li:hover {
 
 ul.drop-menu {
     position: absolute;
-    top: 100%;
+    top: 100%;`
     left: 0%;
     width: 100%;
     padding: 0;
 }
 
 ul.drop-menu li {
-    background: #ddd;
+    padding: 15px;
+    line-height: 1.4;
+    font-size: 14px;
+    background: #f9f9f9;
     color: black;
 }
 
@@ -63,15 +65,6 @@ li:hover > ul.drop-menu {
     perspective: 1000px;
     -webkit-animation: menu1 300ms ease-in-out forwards;
 }
-
-
-
-
-
-
-
-
-
 
 /* change html tag */
 html {

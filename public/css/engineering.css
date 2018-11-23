@@ -1,3 +1,10 @@
+body {
+    height: 100%;
+    font-size: 18px;
+    font-family: 'Raleway', sans-serif;
+    background: linear-gradient(white, #3e4142)fixed;
+}
+
 nav {
     text-align: center;
 }
