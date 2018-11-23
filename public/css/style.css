@@ -12,8 +12,95 @@ h1{
     width: 40vw;
 }
 
+<<<<<<< HEAD:public/css/style.css
 /* Login Form  */
 form  {
+=======
+nav >ul >li {
+    float: left;
+    width: 200px;
+    height:70px;
+    line-height: 60px;
+    position: relative;
+    /* text-transform: uppercase; */
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+}
+
+nav > ul >li:hover {
+    background: #bcd2e2;
+}
+
+ul.drop-menu {
+    position: absolute;
+    top: 100%;`
+    left: 0%;
+    width: 100%;
+    padding: 0;
+}
+
+ul.drop-menu li {
+    padding: 15px;
+    line-height: 1.4;
+    font-size: 14px;
+    background: #f9f9f9;
+    color: black;
+}
+
+ul.drop-menu li:hover {
+    background-color: #b2b5b7;
+}
+
+ul.drop-menu li:last-child {
+    border-radius: 0px 0px 5px 5px;
+}
+
+/* Hides Drop Menu unless Triggered */
+ul.drop-menu li {
+    display: none;
+}
+
+li:hover > ul.drop-menu li {
+    display: block;
+}
+
+li:hover > ul.drop-menu {
+    perspective: 1000px;
+    -webkit-animation: menu1 300ms ease-in-out forwards;
+}
+
+/* .topnav {
+    overflow: hidden;
+} */
+.topnav .icon {
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+
+}
+
+
+/* Advanced Dropdown Animations */
+@-webkit-keyframes menu1 {
+    0% {
+        opacity: 0%;
+        transform: rotateY(-90deg) translateY(30px);
+    }
+    70% {
+        opacity: .5;
+    }
+
+    100% {
+        opacity: 1;
+        transform: rotateY(0deg) translateY(0px);
+    }
+}
+
+/* Login Container */
+.login {
+>>>>>>> 765a7a9a875b2de488ec91354dafd7f2bd3c371b:style.css
     box-sizing: border-box;
     margin: 0 auto;
     padding: 20px 0;
@@ -169,4 +256,30 @@ background-color: #dedfe0;
   100% {
             transform: translateY(-700px) rotate(600deg);
   }
+}
+
+
+
+@media (max-width:900px) and (min-width:300px) {
+
+    /* .topnav li:not(.hamburger) {display: none;}
+    .topnav li.icon {
+      float: right;
+      display: block;
+    } */
+
+    /* 1550 magic number */
+     /* .topnav.responsive {position: relative;}
+     .topnav.responsive li.icon {
+       position: absolute;
+       right: 0;
+       top: 0;
+       width: 100%;
+     } */
+     .topnav.responsive a {
+       float: none;
+       display: block;
+       text-align: left;
+     }
+
 }
