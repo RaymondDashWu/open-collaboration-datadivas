@@ -6,14 +6,13 @@ module.exports = (app) => {
         Project.find({})
         // Changed index.hbs to main.hbs
             .then(projects => {
-                res.render("main.hbs", {
-                    projects
-                });
+                // res.send('hello')
+                res.render('index.handlebars')
                 // TODO: Does not exist yet. Main index.html to convert to hbs
                 // index.html is now main.hbs - anna
             })
             .catch(err => {
-                console.log(err.message);
+                // console.log(err.message);
             });
     })
 

@@ -15,7 +15,7 @@ const mongoose = require('mongoose');
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/data-divas', {useNewUrlParser: true});
 
 // Handlebars
-app.engine('handlebars', exphbs({defaultLayout: 'index'}));
+app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
 // Use Body Parser
@@ -27,10 +27,11 @@ app.use(expressValidator());
 
 const projects = require('./controllers/projects.js')(app);
 
-app.get('/',function(req,res){
-  res.sendFile(path.join(__dirname+'/main.hbs'));
-  //__dirname : It will resolve to your project folder.
-});
+// app.get('/',function(req,res){
+//   // res.sendFile(path.join(__dirname+'/main.hbs'));
+//   res.render('index')
+//   //__dirname : It will resolve to your project folder.
+// });
 
 app.listen(process.env.PORT || 5000, () => {
     console.log('App listening on port 5000!')
