@@ -8,120 +8,19 @@ body {
     font-family: 'Raleway', sans-serif;
     background: linear-gradient(white, #1E619B)fixed;
 }
-
-a {
-    text-decoration: none;
-}
-a:visited {
-    color:black;
-    font-weight: bold;
+h1{
+    width: 40vw;
 }
 
-nav {
-    width: 100%;
-    overflow: hidden;
-    text-align: center;
-}
-
-nav > ul {
-    color: gray;
-    list-style: none;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    display: inline-block;
-    background: white;
-}
-
-nav > ul > li {
-    float: left;
-    width: 200px;
-    height:70px;
-    line-height: 60px;
-    position: relative;
-    font-size: 16px;
-    color: rgba(0, 0, 0, 0.7);
-    cursor: pointer;
-}
-
-nav > ul > li:hover {
-    background: #bcd2e2;
-}
-
-ul.drop-menu {
-    position: absolute;
-    top: 100%;`
-    left: 0%;
-    width: 100%;
-    padding: 0;
-}
-
-ul.drop-menu li {
-    padding: 15px;
-    line-height: 1.4;
-    font-size: 14px;
-    background: #f9f9f9;
-    color: black;
-}
-
-ul.drop-menu li:hover {
-    background-color: #b2b5b7;
-}
-
-ul.drop-menu li:last-child {
-    border-radius: 0px 0px 5px 5px;
-}
-
-/* Hides Drop Menu unless Triggered */
-ul.drop-menu li {
-    display: none;
-}
-
-li:hover > ul.drop-menu li {
-    display: block;
-}
-
-li:hover > ul.drop-menu {
-    perspective: 1000px;
-    -webkit-animation: menu1 300ms ease-in-out forwards;
-}
-
-/* .topnav {
-    overflow: hidden;
-} */
-
-
-/* Advanced Dropdown Animations */
-@-webkit-keyframes menu1 {
-    0% {
-        opacity: 0%;
-        transform: rotateY(-90deg) translateY(30px);
-    }
-    70% {
-        opacity: .5;
-    }
-
-    100% {
-        opacity: 1;
-        transform: rotateY(0deg) translateY(0px);
-    }
-}
-
-/* Login Container */
-.login {
+/* Login Form  */
+form  {
     box-sizing: border-box;
     margin: 0 auto;
-    padding: 80px 0;
+    padding: 20px 0;
     height: 400px;
     text-align: center;
     font-weight: 300;
-}
-
-/*Form Styles*/
-form {
-    padding: 20px 0;
-    position: relative;
-    z-index: 2;
+    z-index: 1
 }
 
 /* Style Input Field */
@@ -176,7 +75,7 @@ form button:hover {
 background-color: #dedfe0;
 }
 
-/* DECORATIVE BUBBLES */
+/* DECORATIVE bubbles */
 .bubbles {
   /* position: absolute; */
   top: 0;
@@ -186,7 +85,7 @@ background-color: #dedfe0;
   z-index: 1;
 }
 .bubbles li {
-  position: absolute;
+  position: fixed;
   list-style: none;
   display: block;
   width: 40px;
@@ -203,7 +102,7 @@ background-color: #dedfe0;
   left: 20%;
   width: 80px;
   height: 80px;
-  animation-delay: 2s;
+  animation-delay: 1s;
   animation-duration: 17s;
 }
 .bubbles li:nth-child(3) {
@@ -251,7 +150,7 @@ background-color: #dedfe0;
 }
 .bubbles li:nth-child(10) {
   left: 90%;
-  width: 160px;
+  width: 560px;
   height: 160px;
   animation-delay: 11s;
 }
@@ -270,53 +169,4 @@ background-color: #dedfe0;
   100% {
             transform: translateY(-700px) rotate(600deg);
   }
-}
-
-
-/* HAMBURGER STYLES */
-.topnav {
-  overflow: hidden;
-}
-
-/* hides bars unless on smaller screen */
-.topnav .icon {
-    display: none;
-}
-
-@media screen and (max-width: 1616px) {
-  .topnav a:not(:first-child) {display: none;}
-  .topnav a.icon {
-    float: right;
-    display: block;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .topnav.responsive {position: relative;}
-  .topnav.responsive .icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-
-  .topnav.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-
-/* @media screen and (max-width: 600px) {
-    nav {
-        background-color: green;
-    }
-} */
-
-
-/* .bar1, .bar2, .bar3 {
-    width: 35px;
-    height: 5px;
-    background-color: #333;
-    margin: 6px 0;
-} */
-
 }

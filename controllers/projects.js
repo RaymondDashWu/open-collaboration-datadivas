@@ -24,25 +24,28 @@ module.exports = (app) => {
 
     // TOFIX: Does not work with user authentication
     app.post("/projects/new", (req, res) => {
-        if (req.user) {
+        console.log(req.user)
+        // if (req.user) {
+       
             var project = new Project(req.body);
-            project.author = req.user._id;
+            //project.author = req.user._id;
             console.log(project.author)
             project
                 .save()
-                .then(project => {
-                    return User.findById(req.user._id);
-                })
+                // .then(project => {
+                //     return User.findById(req.user._id);
+                // })
                 .then(user => {
-                    user.projects.unshift(project);
+                    // user.projects.unshift(project);
                     user.save();
                     // REDIRECT TO THE NEW POST
+                    console.log(project)
                     res.redirect("/project/" + project._id);
                 })
                 .catch(err => {
                     console.log(err.message);
                 });
-        }
+        
     });
 
     // app.post('/projects/new', (req, res) => {
@@ -64,7 +67,7 @@ module.exports = (app) => {
 
 
     // Look up a single project
-    app.get("/projects/:category/:id", function (req, res) {
+    app.get("/projects/:id", function (req, res) {
         // Testing to see if this exists
         console.log(req.params.id)
         // LOOK UP THE POST
@@ -83,7 +86,7 @@ module.exports = (app) => {
     });
 
     // EDIT a single project
-    app.get('/projects/:category/:id/edit', function (req, res) {
+    app.get('/projects/:id/edit', function (req, res) {
         Project.findById(req.params.id, function (err, projects) {
             res.render('projects-edit.handlebars', {
                 projects: projects
@@ -94,11 +97,10 @@ module.exports = (app) => {
 
     // Update a single project
     // TOFIX: Cannot GET on Postman
-    app.put('/projects/:category/:id', (req, res) => {
-
+    app.put('/projects/:id', (req, res) => {
         Project.findByIdAndUpdate(req.params.id, req.body)
             .then(projects => {
-                res.redirect(`/projects/${req.params.category}/${req.params.id}`)
+                res.redirect(`/projects/${req.params.id}`)
             })
             .catch(err => {
                 console.log(err.message)
@@ -107,10 +109,14 @@ module.exports = (app) => {
 
     // DELETE a single project
     // TOFIX: Cannot GET on Postman
-    app.delete('/projects/:category/:id', function (req, res) {
+    app.delete('/projects/:id', function (req, res) {
         Project.findByIdAndRemove(req.params.id)
             .then((projects) => {
-                res.redirect(`/${req.params.category}`)
+                console.log("LOOK HERE")
+                console.log(req.params.id)
+                console.log(projects)
+                res.redirect(`/`)
+                // res.redirect(`/${req.params.category}`)
             })
             .catch((err) => {
                 console.log(err.message)

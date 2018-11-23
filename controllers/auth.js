@@ -1,28 +1,30 @@
 const jwt = require('jsonwebtoken');
 const User = require("../models/user");
+const mongoose = require('mongoose');
 
 module.exports = (app) => {
     // SIGN UP FORM
     app.get("/sign-up", (req, res) => {
         // TODO: sign-up page handlebars
-        res.render("sign-up.handlebars");
+        var currentUser = req.user;
+        res.render("sign-up.handlebars", {currentUser: currentUser});
     });
 
     app.post("/sign-up", (req, res) => {
         // Create User and JWT
         const user = new User(req.body);
-
-        user.save().then((user) => {
+        user.save()
+        .then((user) => {
                 var token = jwt.sign({
                     _id: user._id
-                }, process.env.SECRET, {
+                }, process.env.SECRETKEY, {
                     expiresIn: "60 days"
                 });
                 res.cookie('nToken', token, {
                     maxAge: 900000,
                     httpOnly: true
                 });
-                res.redirect('/');
+                res.redirect('/'); //UNCOMMENT ONCE TESTED
             })
             .catch(err => {
                 console.log(err.message);
@@ -63,7 +65,7 @@ module.exports = (app) => {
                     const token = jwt.sign({
                         _id: user._id,
                         username: user.username
-                    }, process.env.SECRET, {
+                    }, process.env.SECRETKEY, {
                         expiresIn: "60 days"
                     });
                     // Set a cookie and redirect to root
