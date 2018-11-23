@@ -1,0 +1,120 @@
+
+body {
+    background: linear-gradient(white, #2a5122)fixed;
+}
+
+h1 {
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/*Form Styles*/
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+}
+
+textarea#project-summary {
+    appearance: none;
+    outline: 0;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.2);
+    width: 350px;
+    border-radius: 3px;
+    padding: 10px 15px;
+    margin: 0 auto 10px auto;
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    color: white;
+    -webkit-transition-duration: 0.25s;
+            transition-duration: 0.25s;
+    font-weight: 300;
+}
+
+/*Text Area Hover Style */
+textarea:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Changes field when clicked */
+textarea:focus {
+  background-color: white;
+  width: 300px;
+  color: black;
+}
+
+/* Style Input Field */
+form input {
+  appearance: none;
+  outline: 0;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 250px;
+  border-radius: 3px;
+  padding: 10px 15px;
+  margin: 0 auto 10px auto;
+  display: block;
+  text-align: center;
+  font-size: 18px;
+  color: white;
+  -webkit-transition-duration: 0.25s;
+          transition-duration: 0.25s;
+  font-weight: 300;
+}
+
+/*Input Hover Style */
+form input:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Changes field when clicked */
+form input:focus {
+  background-color: white;
+  width: 300px;
+  color: black;
+}
+
+/*Style Login/Register Buttons*/
+form button {
+  appearance: none;
+  outline: 0;
+  background-color: white;
+  border: 0;
+  padding: 10px 15px;
+  color: gray;
+  text-transform: uppercase;
+  border-radius: 3px;
+  width: 250px;
+  cursor: pointer;
+  font-size: 15px;
+  transition-duration: 0.25s;
+}
+
+/*Button Hover Styles*/
+form button:hover {
+background-color: #dedfe0;
+}
+
+.category-menu {
+    position: absolute;
+
+}
+.category-menu-selected {
+
+}
+
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
