@@ -1,0 +1,20 @@
+<fieldset>
+  <legend>Edit Project Post</legend>
+  <!-- TITLE -->
+  <div class="form-group">
+    <label for="post-title">Title</label><br>
+    <input class="form-control" id="post-title" type="text" name="title" value="{{post.title}}"/>
+  </div>
+
+  <!-- project TITLE -->
+  <div class="form-group">
+    <label for="project-title">Project Title</label><br>
+    <input class="form-control" id="project-title" type="text" name="projectTitle" value="{{post.projectTitle}}" />
+  </div>
+
+  <!-- DESCRIPTION -->
+  <div class="form-group">
+    <label for="post-description">Description</label><br>
+    <textarea class="form-control" id="post-description" name="description" rows="10" />{{post.description}}</textarea>
+  </div>
+</fieldset>

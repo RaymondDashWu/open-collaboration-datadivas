@@ -1,0 +1,23 @@
+<a href="/">Back to Home</a>
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-3">
+    <h1>{{post.title}}</h1>
+    <h2>{{post.projectTitle}}</h2>
+    <p>{{post.description}}</p>
+    <p><a href="/projects/{{post.projectId}}/posts/{{post._id}}/edit">Edit</a></p>
+    <p><form method="POST" action="/projects/{{post.projectId}}/rposts/{{rpost._id}}?_method=DELETE">
+        <button class="btn btn-primary" type="submit">Delete</button>
+    </form></p>
+
+    <hr>
+
+    <!-- Comment form -->
+    {{> comment-form}}
+
+    <!-- Show Comments -->
+   {{#each comments}}
+     {{> comment}}
+   {{/each}}
+
+  </div>
+</div>

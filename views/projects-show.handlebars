@@ -1,0 +1,27 @@
+
+<div class="text-right">
+    <a href="/projects/{{project.id}}/posts/new" class="btn btn-primary">Create a Post</a>
+</div>
+
+<div class="row">
+    <div class="col-sm-4">
+
+    </div>
+    <div class="col-sm-8">
+        <h1>{{project.title}}</h1>
+        <p class="lead">{{project.overview}}</p>
+    </div>
+
+    <h3>Project Posts</h3>
+    {{#each posts}}
+<div>
+    <h1><a href="/projects/{{this.projectId}}/posts/{{this._id}}"></h1>
+        <h2>{{this.title}}</h2>
+        <p>{{this.description}}</p>
+        <p><a href="/projects/{{this.projectId}}/posts/{{this._id}}/edit">Edit</a></p>
+  <p><form method="POST" action="/projects/{{this.projectId}}/posts/{{this._id}}?_method=DELETE">
+      <button class="btn btn-primary" type="submit">Delete</button>
+  </form></p>
+    </a>
+    {{/each}}
+</div>
