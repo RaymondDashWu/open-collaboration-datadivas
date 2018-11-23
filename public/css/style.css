@@ -10,7 +10,15 @@ body {
     background: linear-gradient(white, #1E619B)fixed;
 }
 
+a {
+    text-decoration: none;
+}
+a:visited {
+    font-weight: 400;
+}
+
 nav {
+    width: 100%;
     text-align: center;
 }
 
