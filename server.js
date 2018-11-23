@@ -18,6 +18,9 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/data-diva
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
+// For static files
+app.use(express.static('public'))
+
 // Use Body Parser
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));

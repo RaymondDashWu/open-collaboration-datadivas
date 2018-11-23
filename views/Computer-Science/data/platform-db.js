@@ -1,12 +1,10 @@
 const mongoose = require("mongoose");
 assert = require("assert");
 
-// const url = "mongodb://localhost/reddit-db";    // UNUSED URL ENDPOINT
+const url = "mongodb://localhost/reddit-db";
 mongoose.Promise = global.Promise;
 mongoose.connect(
-  // "mongodb://localhost/reddit-db",          // Change this to the name of the actual
-  "mongodb://localhost/data-divas",
-
+  "mongodb://localhost/reddit-db",
   { useMongoClient: true }
 );
 // mongoose.Promise = global.Promise;
