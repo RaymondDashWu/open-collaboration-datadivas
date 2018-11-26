@@ -1,6 +1,6 @@
 /* replace html tag */
 
-hmtl {
+html {
     height: 100%;
 }
 body {
@@ -23,7 +23,7 @@ nav > ul {
     background: white;
 }
 
-nav >ul >li {
+nav > ul > li {
     float: left;
     width: 200px;
     height:70px;
@@ -35,7 +35,7 @@ nav >ul >li {
     cursor: pointer;
 }
 
-nav > ul >li:hover {
+nav > ul > li:hover {
     background: #bcd2e2;
 }
 
@@ -85,7 +85,9 @@ li:hover > ul.drop-menu {
 }
 
 @media screen and (max-width: 600px) {
-
+    nav {
+        background-color: green;
+    }
 }
 
 

@@ -1,0 +1,21 @@
+
+<link rel="stylesheet" href="/css/astronomy.css">
+<!-- <link rel="stylesheet" href="../../public/css/astronomy.css"> -->
+
+<div id='stars'></div>
+<div id='stars2'></div>
+<div id='stars3'></div>
+<div id='title'>
+    <span>
+        ASTRONOMY
+    </span>
+</div>
+
+<div class="row">
+    {{#each projects}}
+  <div class="col-sm-3">
+    <h2><a href="/reviews/{{this._id}}">{{this.title}}</a></h2>
+    <small>{{this.movieTitle}}</small>
+  </div>
+{{/each}}
+</div>
