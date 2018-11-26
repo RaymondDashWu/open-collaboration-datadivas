@@ -119,7 +119,7 @@ module.exports = (app) => {
 
     // Astronomy
     app.get('/astronomy', (req, res) => {
-        res.render("../Astronomy/astronomy.hbs")
+        res.render("")
         // TODO: Astronomy landing page
     });
 
