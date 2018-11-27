@@ -1,0 +1,9 @@
+<div>
+  <h1><a href="/projects/{{project.id}}/posts/{{post._id}}">{{post.title}}</a></h1>
+  <h2>{{post.projectTitle}}</h2>
+  <p>{{post.description}}</p>
+  <p><a href="/projects/{{post.project}}/posts/{{post._id}}/edit">Edit</a></p>
+  <p><form method="POST" action="/projects/{{project.id}}/posts/{{post._id}}?_method=DELETE">
+      <button class="btn btn-primary" type="submit">Delete</button>
+  </form></p>
+</div>

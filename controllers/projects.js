@@ -18,7 +18,7 @@ module.exports = (app) => {
 
     // CREATE a new project
     app.get('/projects/new', (req, res) => {
-        res.render("projects-new.handlebars")
+        res.render("../views/projects-new.handlebars")
         // TODO: Make a form for new projects. Look at Project model to see what needs to be there
     });
 

@@ -1,11 +1,13 @@
-<style>
-</style>
+<!-- projects-index -->
+<h1>projects!</h1>
 
-<div class="project-container">
+<a href="/projects/new">New Project</a>
+
+<div class="row">
     {{#each projects}}
-            <p class="project-title">{{this.title}}</p>
-        <p><a href="/projects/{{this.id}}">
-
-        </a></p>
-    {{/each}}
+  <div class="col-sm-3">
+    <h2><a href="/projects/{{this._id}}">{{this.title}}</a></h2>
+    <small>{{this.movieTitle}}</small>
+  </div>
+{{/each}}
 </div>
