@@ -95,7 +95,6 @@ module.exports = (app) => {
     // Update a single project
     // TOFIX: Cannot GET on Postman
     app.put('/projects/:category/:id', (req, res) => {
-
         Project.findByIdAndUpdate(req.params.id, req.body)
             .then(projects => {
                 res.redirect(`/projects/${req.params.category}/${req.params.id}`)
@@ -110,6 +109,9 @@ module.exports = (app) => {
     app.delete('/projects/:category/:id', function (req, res) {
         Project.findByIdAndRemove(req.params.id)
             .then((projects) => {
+                console.log("LOOK HERE")
+                console.log(req.params.id)
+                console.log(projects)
                 res.redirect(`/${req.params.category}`)
             })
             .catch((err) => {
