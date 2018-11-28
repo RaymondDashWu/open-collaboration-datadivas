@@ -1,6 +1,17 @@
+<link rel="stylesheet" href="/css/nav.css">
+<link rel="stylesheet" href="/js/script.css">
+
 <!--Drop Down NAV BAR-->
 <nav class = "topnav" id = "myTopnav">
     <ul>
+        <li><a href="/"><strong>HOME</strong></a>
+            <ul class = "back-home">
+            </ul>
+        </li>
+
+        <div class="nav-items">
+
+        </div>
         <li><a href="/astronomy">ASTRONOMY</a>
             <ul class = "drop-menu astronomy-menu">
                 <li>The study of celestial objects, space, and the physical universe
@@ -51,11 +62,27 @@
             </ul>
         </li>
 
-        <li>
-            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                <i class="fa fa-bars"></i>
-            </a>
-        </li>
+        <div id="menuToggle">
+            <li class="responsive-menu">
+            <input type="checkbox" />
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+                <ul id="menu">
+                  <li><a href="/astronomy">Astronomy</a></li>
+                  <li><a href="/biology">Biology </a></li>
+                  <li><a href="/chemistry">Chemistry</a></li>
+                  <li><a href="/computer-science">Computer Science</a></li>
+                  <li><a href="/environmental">Environmental</a></li>
+                  <li><a href="/engineering">Engineering</a></li>
+                  <li><a href="/physics">Physics</a></li>
+                  <li><a href="/psychology">Psychology</a></li>
+
+                </ul>
+            </li>
+         </div>
 
     </ul>
 </nav>
