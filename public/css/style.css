@@ -8,102 +8,19 @@ body {
     font-family: 'Raleway', sans-serif;
     background: linear-gradient(white, #1E619B)fixed;
 }
+
 h1{
     width: 40vw;
 }
 
-<<<<<<< HEAD:public/css/style.css
+
 /* Login Form  */
 form  {
-=======
-nav >ul >li {
-    float: left;
-    width: 200px;
-    height:70px;
-    line-height: 60px;
-    position: relative;
-    /* text-transform: uppercase; */
-    font-size: 16px;
-    color: rgba(0, 0, 0, 0.7);
-    cursor: pointer;
-}
-
-nav > ul >li:hover {
-    background: #bcd2e2;
-}
-
-ul.drop-menu {
-    position: absolute;
-    top: 100%;`
-    left: 0%;
-    width: 100%;
-    padding: 0;
-}
-
-ul.drop-menu li {
-    padding: 15px;
-    line-height: 1.4;
-    font-size: 14px;
-    background: #f9f9f9;
-    color: black;
-}
-
-ul.drop-menu li:hover {
-    background-color: #b2b5b7;
-}
-
-ul.drop-menu li:last-child {
-    border-radius: 0px 0px 5px 5px;
-}
-
-/* Hides Drop Menu unless Triggered */
-ul.drop-menu li {
-    display: none;
-}
-
-li:hover > ul.drop-menu li {
-    display: block;
-}
-
-li:hover > ul.drop-menu {
-    perspective: 1000px;
-    -webkit-animation: menu1 300ms ease-in-out forwards;
-}
-
-/* .topnav {
-    overflow: hidden;
-} */
-.topnav .icon {
-    display: none;
-}
-
-@media screen and (max-width: 600px) {
-
-}
-
-
-/* Advanced Dropdown Animations */
-@-webkit-keyframes menu1 {
-    0% {
-        opacity: 0%;
-        transform: rotateY(-90deg) translateY(30px);
-    }
-    70% {
-        opacity: .5;
-    }
-
-    100% {
-        opacity: 1;
-        transform: rotateY(0deg) translateY(0px);
-    }
-}
-
-/* Login Container */
-.login {
->>>>>>> 765a7a9a875b2de488ec91354dafd7f2bd3c371b:style.css
-    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin: 0 auto;
-    padding: 20px 0;
+    padding-top: 30vh;
     height: 400px;
     text-align: center;
     font-weight: 300;
@@ -116,7 +33,7 @@ form input {
   outline: 0;
   border: 1px solid rgba(255, 255, 255, 0.4);
   background-color: rgba(255, 255, 255, 0.2);
-  width: 250px;
+  width: 20vw;
   border-radius: 3px;
   padding: 10px 15px;
   margin: 0 auto 10px auto;
@@ -147,11 +64,12 @@ form button {
   outline: 0;
   background-color: white;
   border: 0;
-  padding: 10px 15px;
+  padding: .5vh;
+  margin: .5vh;
   color: gray;
   text-transform: uppercase;
   border-radius: 3px;
-  width: 250px;
+  width: 15vw;
   cursor: pointer;
   font-size: 15px;
   transition-duration: 0.25s;
