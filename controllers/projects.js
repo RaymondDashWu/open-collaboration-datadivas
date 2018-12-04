@@ -17,8 +17,8 @@ module.exports = (app) => {
     })
 
     // CREATE a new project
-    app.get('/projects/new', (req, res) => {
-        res.render("../views/projects-new.handlebars")
+    app.get('/projects/:category/new', (req, res) => {
+        res.render("../views/projects-new.handlebars", {category: req.params.category.toLowerCase()})
         // TODO: Make a form for new projects. Look at Project model to see what needs to be there
     });
 
@@ -122,8 +122,10 @@ module.exports = (app) => {
     })
 
     // Astronomy
+    // TODO: Make this /:category
     app.get('/astronomy', (req, res) => {
-        res.render("../views/Astronomy/astronomy.handlebars")
+        var category = req.path.split('/')[1];
+        res.render("../views/Astronomy/astronomy.handlebars", {category})
         // TODO: Astronomy landing page
     });
 
