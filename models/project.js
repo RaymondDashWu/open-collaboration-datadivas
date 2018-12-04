@@ -6,21 +6,21 @@ const PostSchema = new Schema({
     updatedAt: { type: Date },
     category: { type: String, required: true },
     title: { type: String, required: true },
-    url: { type: String, required: true },
-    summary: { type: String, required: true },
+    url: { type: String, required: false },
+    summary: { type: String, required: false },
     projectImg: {type: String, required: true},
-    author : { type: Schema.Types.ObjectId, ref: "User", required: true },
+    author : { type: Schema.Types.ObjectId, ref: "User", required: false },
   });
-  
+
   PostSchema.pre("save", function(next) {
     // SET createdAt AND updatedAt
     const now = new Date();
     this.updatedAt = now;
-  
+
     if (!this.createdAt) {
       this.createdAt = now;
     }
-  
+
     next();
   });
 

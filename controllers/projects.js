@@ -35,12 +35,12 @@ module.exports = (app) => {
                 // .then(project => {
                 //     return User.findById(req.user._id);
                 // })
-                .then(user => {
+                .then(proj => {
                     // user.projects.unshift(project);
-                    user.save();
+                    proj.save();
                     // REDIRECT TO THE NEW POST
-                    console.log(project)
-                    res.redirect("/project/" + project._id);
+                    console.log(proj)
+                    res.redirect("/projects/" + proj._id);
                 })
                 .catch(err => {
                     console.log(err.message);
@@ -73,9 +73,7 @@ module.exports = (app) => {
         // LOOK UP THE POST
         Project.findById(req.params.id)
             .then(project => {
-                res.render("project-show.handlebars");
-                // TODO: This will show a single project. Reference wireframe
-                return res.status(200);
+                res.render("projects-show.handlebars", {project});
             })
             .catch(err => {
                 console.log(err.message);

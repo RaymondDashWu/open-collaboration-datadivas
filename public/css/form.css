@@ -9,12 +9,12 @@ h1 {
     text-transform: uppercase;
 }
 
-
 /*Form Styles*/
 
 .form-container {
-    padding-top: 10vh;
-    margin: auto;
+    z-index: 1;
+    padding-top: 1vh;
+    margin-top: 5px;
     display: flex;
     flex-direction: column;
     justify-content: center;
