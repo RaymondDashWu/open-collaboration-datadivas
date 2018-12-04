@@ -3,7 +3,7 @@
   <div class="col-sm-6 col-sm-offset-3">
     <h1>{{post.title}}</h1>
     <h2>{{post.projectTitle}}</h2>
-    <p>{{post.description}}</p>
+    <p>{{post.summary}}</p>
     <p><a href="/projects/{{post.projectId}}/posts/{{post._id}}/edit">Edit</a></p>
     <p><form method="POST" action="/projects/{{post.projectId}}/rposts/{{rpost._id}}?_method=DELETE">
         <button class="btn btn-primary" type="submit">Delete</button>

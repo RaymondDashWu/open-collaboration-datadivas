@@ -40,7 +40,7 @@ module.exports = (app) => {
                     proj.save();
                     // REDIRECT TO THE NEW POST
                     console.log(proj)
-                    res.redirect("/project/" + proj._id);
+                    res.redirect("/projects/" + proj._id);
                 })
                 .catch(err => {
                     console.log(err.message);
@@ -73,7 +73,7 @@ module.exports = (app) => {
         // LOOK UP THE POST
         Project.findById(req.params.id)
             .then(project => {
-                res.render("projects-show.handlebars");
+                res.render("projects-show.handlebars", {project});
             })
             .catch(err => {
                 console.log(err.message);
