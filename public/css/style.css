@@ -95,11 +95,6 @@ li:hover > ul.drop-menu {
     }
 }
 
-/* Login Container */
-.login {
-    box-sizing: border-box;
-=======
-
 /* Login Form  */
 form  {
     display: flex;
