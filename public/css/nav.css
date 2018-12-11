@@ -1,25 +1,15 @@
 nav {
     width: 100%;
     background: white;
-    text-align: center;
 }
 
 nav > ul {
-    float:center;
     list-style: none;
-    width: 100%;
-    padding: 0;
     margin: 0;
-    display: inline-block;
+    display: flex;
 }
 
 nav >ul >li {
-    float: left;
-    width: 162px;
-    height:70px;
-    line-height: 60px;
-    position: relative;
-    font-size: 16px;
     color: rgba(0, 0, 0, 0.7);
     text-decoration: none
     cursor: pointer;
@@ -28,6 +18,10 @@ nav >ul >li {
 a {
     text-decoration: none;
 
+}
+
+a:visited {
+    color:rgba(0, 0, 0, 0.7);
 }
 nav >ul >li a:visited {
     color: rgba(0, 0, 0, 0.7);
@@ -83,8 +77,6 @@ li:hover > ul.drop-menu {
 {
   display: block;
   position: relative;
-  top: 50px;
-  left: 50px;
 
   z-index: 1;
 
@@ -95,10 +87,10 @@ li:hover > ul.drop-menu {
 #menuToggle input
 {
   display: block;
-  width: 40px;
-  height: 32px;
+  width: 200px;
+  height: 50px;
   position: absolute;
-  top: -7px;
+  top: -10px;
   left: -5px;
 
   cursor: pointer;
@@ -110,15 +102,20 @@ li:hover > ul.drop-menu {
 }
 
 /* Hamburger Bars */
+.hamburger {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
 #menuToggle span
 {
-  display: block;
-  width: 33px;
-  height: 4px;
+  display: flex;
+  width: 25px;
+  height: 3px;
+  margin-top: 1px;
   margin-bottom: 5px;
   position: relative;
 
-  background: gray;
+  background: #4f5659;
   border-radius: 5px;
 
   z-index: 1;
@@ -128,11 +125,10 @@ li:hover > ul.drop-menu {
 #menu
 {
   position: absolute;
-  width: 200px;
-  margin: -100px 0 0 -50px;
-  padding: 50px;
-  padding-top: 125px;
-
+  width: 155px;
+  margin-top: 0em;
+  margin-left: -50px;
+  padding: 2.5em;
   background: white;
   list-style-type: none;
 
@@ -188,5 +184,9 @@ li:hover > ul.drop-menu {
     display: block;
     text-align: left;
   }
+
+  .topnav.responsive-menu:visited {
+  color: green;
+}
 
 }
