@@ -1,27 +1,29 @@
 require('dotenv').config();
 
 const express = require('express');
+
 const app = express();
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const expressValidator = require('express-validator');
 const exphbs = require('express-handlebars');
 // db = require('./data/platform-db.js');
-const Project = require('./models/project');
+// const Project = require('./models/project');
 const jwt = require('jsonwebtoken');
-const path = require('path');
-const { verifyAuthentication } = require('./utils/middleware')
+// const path = require('path');
+// const { verifyAuthentication } = require('./utils/middleware');
 
 // Database
 const mongoose = require('mongoose');
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/data-divas', {useNewUrlParser: true});
+
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/data-divas', { useNewUrlParser: true });
 
 // Handlebars
-app.engine('handlebars', exphbs({defaultLayout: 'main'}));
+app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
 // For static files
-app.use(express.static('public'))
+app.use(express.static('public'));
 
 app.use(cookieParser()); // Add this after you initialize express.
 
@@ -34,24 +36,23 @@ app.use(expressValidator());
 
 require('./controllers/auth.js')(app);
 /** Protected routes */
-//app.use(verifyAuthentication);
+// app.use(verifyAuthentication);
 require('./controllers/projects.js')(app);
 
 // TODO: Does not work
-var checkAuth = (req, res, next) => {
-  console.log("Checking authentication");
-  if (typeof req.cookies.nToken === "undefined" || req.cookies.nToken === null) {
+const checkAuth = (req, res, next) => {
+  console.log('Checking authentication');
+  if (typeof req.cookies.nToken === 'undefined' || req.cookies.nToken === null) {
     req.user = null;
   } else {
-    var token = req.cookies.nToken;
-    var decodedToken = jwt.decode(token, { complete: true }) || {};
+    const token = req.cookies.nToken;
+    const decodedToken = jwt.decode(token, { complete: true }) || {};
     req.user = decodedToken.payload;
-    console.log("decodedToken header + payload")
+    console.log('decodedToken header + payload');
     console.log(decodedToken.header);
     console.log(decodedToken.payload);
   }
-  console.log("user belo")
- res.locals.user = req.user.data
+  res.locals.user = req.user.data;
   next();
 };
 
@@ -62,5 +63,5 @@ var checkAuth = (req, res, next) => {
 // });
 
 app.listen(process.env.PORT || 5000, () => {
-    console.log('App listening on port 5000!')
-  })
+  console.log('App listening on port 5000!');
+});
