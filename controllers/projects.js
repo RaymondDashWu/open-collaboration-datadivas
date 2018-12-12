@@ -25,29 +25,58 @@ module.exports = (app) => {
     });
 
     // TOFIX: Does not work with user authentication
-    app.post('/projects/new', (req, res) => {
-      console.log(req.user);
-      // if (req.user) {
-
-      const project = new Project(req.body);
-      // project.author = req.user._id;
-      console.log(project.author);
-      project
-        .save()
-        // .then(project => {
-        //     return User.findById(req.user._id);
-        // })
-        .then((proj) => {
-          // user.projects.unshift(project);
-          proj.save();
-          // REDIRECT TO THE NEW POST
-          console.log(proj);
-          res.redirect(`/projects/${proj._id}`);
-        })
-        .catch((err) => {
-          console.log(err.message);
-        });
+    app.post("/posts/new", (req, res) => {
+      if (req.user) {
+        // console.log(req.body)
+        var project = new Project(req.body);
+        project.author = req.user._id;
+        // console.log("LOOK HERE")
+        // console.log(post.author)
+        // console.log(req.user)
+        // console.log(req.user._id)
+        project
+          .save()
+          .then(project => {
+            return User.findById(req.user._id);
+          })
+          .then(user => {
+            user.projects.unshift(project);
+            user.save();
+            // REDIRECT TO THE NEW POST
+            res.redirect(`/projects/${proj._id}`);
+          })
+          .catch(err => {
+            console.log(err.message);
+          });
+      } else {
+        res.send('You need to be logged in!')
+      }
     });
+    
+    // app.post('/projects/new', (req, res) => {
+    //   console.log(req.user);
+    //   // if (req.user) {
+
+    //   const project = new Project(req.body);
+    //   // project.author = req.user._id;
+    //   console.log(project.author);
+    //   project
+    //     .save()
+    //     // .then(project => {
+    //     //     return User.findById(req.user._id);
+    //     // })
+    //     .then((proj) => {
+    //       // user.projects.unshift(project);
+    //       proj.save();
+    //       // REDIRECT TO THE NEW POST
+    //       console.log(proj);
+    //       res.redirect(`/projects/${proj._id}`);
+    //     })
+    //     .catch((err) => {
+    //       console.log(err.message);
+    //     });
+    // });
+    
 
     // app.post('/projects/new', (req, res) => {
     //     // INSTANTIATE INSTANCE OF PROJECT MODEL
