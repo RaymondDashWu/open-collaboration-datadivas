@@ -126,9 +126,15 @@ module.exports = (app) => {
   // Astronomy
   // TODO: Make this /:category
   app.get('/:category', (req, res) => {
-    res.render('../views/:category/:category.handlebars', {
-      category
-    })
+    res.render('../views/:category/:category.handlebars', { category });
+    // Project.find(req.params)
+    //   .then(() => {
+    //     res.render('../views/:category/:category.handlebars', {
+    //       category
+    //     })
+    //   }).catch((err) => {
+    //     console.error(err)
+    //   })
   })
 
   app.get('/astronomy', (req, res) => {
@@ -140,10 +146,10 @@ module.exports = (app) => {
   });
 
   // Biology
-  app.get('/biology', (req, res) => {
-    res.render('../views/Biology/biology.handlebars');
-    // TODO: Biology landing page
-  });
+  // app.get('/biology', (req, res) => {
+  //   res.render('../views/Biology/biology.handlebars');
+  //   // TODO: Biology landing page
+  // });
 
   // Chemistry
   app.get('/chemistry', (req, res) => {

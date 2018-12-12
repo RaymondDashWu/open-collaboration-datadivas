@@ -7,7 +7,10 @@ https://medium.com/p/595fd39dd214/edit
 Built in collaboration with:
 https://github.com/AnniePawl
 
-## Installation
+### What does it do?
+Users will be able to create projects and look for other users to collaborate with. There are options for CRUDing aforementioned projects.
+
+### Installation
 Clone the repo and enter the following commands in the terminal:
 
 ```sh
