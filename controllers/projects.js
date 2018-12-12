@@ -4,7 +4,7 @@ module.exports = (app) => {
   // Render index of all projects
   app.get('/', (req, res) => {
     Project.find({})
-    // Changed index.handlebars to main.handlebars
+      // Changed index.handlebars to main.handlebars
       .then((projects) => {
         // res.send('hello')
         res.render('index.handlebars');
@@ -18,7 +18,9 @@ module.exports = (app) => {
 
   // CREATE a new project
   app.get('/projects/:category/new', (req, res) => {
-    res.render('../views/projects-new.handlebars', { category: req.params.category.toLowerCase() });
+    res.render('../views/projects-new.handlebars', {
+      category: req.params.category.toLowerCase()
+    });
     // TODO: Make a form for new projects. Look at Project model to see what needs to be there
   });
 
@@ -32,9 +34,9 @@ module.exports = (app) => {
     console.log(project.author);
     project
       .save()
-    // .then(project => {
-    //     return User.findById(req.user._id);
-    // })
+      // .then(project => {
+      //     return User.findById(req.user._id);
+      // })
       .then((proj) => {
         // user.projects.unshift(project);
         proj.save();
@@ -71,7 +73,9 @@ module.exports = (app) => {
     // LOOK UP THE POST
     Project.findById(req.params.id)
       .then((project) => {
-        res.render('projects-show.handlebars', { project });
+        res.render('projects-show.handlebars', {
+          project
+        });
       })
       .catch((err) => {
         console.log(err.message);
@@ -121,9 +125,17 @@ module.exports = (app) => {
 
   // Astronomy
   // TODO: Make this /:category
+  app.get('/:category', (req, res) => {
+    res.render('../views/:category/:category.handlebars', {
+      category
+    })
+  })
+
   app.get('/astronomy', (req, res) => {
     const category = req.path.split('/')[1];
-    res.render('../views/Astronomy/astronomy.handlebars', { category });
+    res.render('../views/Astronomy/astronomy.handlebars', {
+      category
+    });
     // TODO: Astronomy landing page
   });
 
