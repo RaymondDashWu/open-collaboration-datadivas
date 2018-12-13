@@ -31,7 +31,7 @@ app.use(cookieParser()); // Add this after you initialize express.
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-const checkAuth = (req, res, next) => {
+var checkAuth = (req, res, next) => {
   console.log('Checking authentication');
   if (typeof req.cookies.nToken === 'undefined' || req.cookies.nToken === null) {
     req.user = null;
@@ -39,11 +39,9 @@ const checkAuth = (req, res, next) => {
     const token = req.cookies.nToken;
     const decodedToken = jwt.decode(token, { complete: true }) || {};
     req.user = decodedToken.payload;
-    console.log('decodedToken header + payload');
-    console.log(decodedToken.header);
-    console.log(decodedToken.payload);
   }
-  res.locals.user = req.user.data;
+  console.log("req.user:",req.user)
+  // res.locals.user = req.user.data;
   next();
 };
 // Add after body parser initialization!
