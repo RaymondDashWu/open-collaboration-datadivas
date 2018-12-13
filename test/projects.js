@@ -33,13 +33,13 @@ describe('category', () => {
     chai
       .request('localhost:5000')
       .get('/astronomy')
-      .get('/biology')
-      .get('/chemistry')
-      .get('/computer-science')
-      .get('/engineering')
-      .get('/environmental')
-      .get('/physics')
-      .get('/psychology')
+      // .get('/biology')
+      // .get('/chemistry')
+      // .get('/computer-science')
+      // .get('/engineering')
+      // .get('/environmental')
+      // .get('/physics')
+      // .get('/psychology')
       .end((err, res) => {
         if (err) {
           return done(err);
