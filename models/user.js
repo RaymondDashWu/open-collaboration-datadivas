@@ -8,6 +8,7 @@ const UserSchema = new Schema({
   updatedAt: { type: Date },
   password: { type: String, select: false },
   username: { type: String, required: true },
+  projects: [{ type: Schema.Types.ObjectId, ref: "Projects" }]
   // make ability for user to see all projects. Can later call it with a mongoose query
 });
 

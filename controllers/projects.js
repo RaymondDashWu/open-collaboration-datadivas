@@ -26,7 +26,7 @@ module.exports = (app) => {
 
     // TOFIX: Does not work with user authentication
     app.post("/projects/new", (req, res) => {
-      console.log(req.user)
+      console.log("req.user:",req.user)
       if (req.user) {
         // console.log(req.body)
         var project = new Project(req.body);
@@ -46,7 +46,7 @@ module.exports = (app) => {
             user.projects.unshift(p);
             user.save();
             // REDIRECT TO THE NEW POST
-            res.redirect(`/projects/${proj._id}`);
+            res.redirect(`/projects/${project._id}`);
           })
           .catch(err => {
             console.log(err.message);

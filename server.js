@@ -31,15 +31,6 @@ app.use(cookieParser()); // Add this after you initialize express.
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-// Add after body parser initialization!
-app.use(expressValidator());
-
-require('./controllers/auth.js')(app);
-/** Protected routes */
-// app.use(verifyAuthentication);
-require('./controllers/projects.js')(app);
-
-// TODO: Does not work
 const checkAuth = (req, res, next) => {
   console.log('Checking authentication');
   if (typeof req.cookies.nToken === 'undefined' || req.cookies.nToken === null) {
@@ -55,6 +46,18 @@ const checkAuth = (req, res, next) => {
   res.locals.user = req.user.data;
   next();
 };
+// Add after body parser initialization!
+app.use(expressValidator());
+app.use(checkAuth)
+
+
+
+require('./controllers/auth.js')(app);
+/** Protected routes */
+// app.use(verifyAuthentication);
+require('./controllers/projects.js')(app);
+
+
 
 // app.get('/',function(req,res){
 //   // res.sendFile(path.join(__dirname+'/main.hbs'));
@@ -63,6 +66,6 @@ const checkAuth = (req, res, next) => {
 // });
 
 app.listen(process.env.PORT || 5000, () => {
-  app.listen(port);
+  // app.listen(port);
   console.log('App listening on port 5000!');
 });

@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const PostSchema = new Schema({
+const ProjectSchema = new Schema({
   createdAt: { type: Date },
   updatedAt: { type: Date },
   category: { type: String, required: true },
@@ -13,7 +13,7 @@ const PostSchema = new Schema({
   author: { type: Schema.Types.ObjectId, ref: 'User', required: false },
 });
 
-PostSchema.pre('save', function (next) {
+ProjectSchema.pre('save', function (next) {
   // SET createdAt AND updatedAt
   const now = new Date();
   this.updatedAt = now;
@@ -25,4 +25,4 @@ PostSchema.pre('save', function (next) {
   next();
 });
 
-module.exports = mongoose.model('Project', PostSchema);
+module.exports = mongoose.model('Project', ProjectSchema);
