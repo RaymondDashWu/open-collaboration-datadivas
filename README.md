@@ -8,7 +8,19 @@ Built in collaboration with:
 https://github.com/AnniePawl
 
 ### What does it do?
-Users will be able to create projects and look for other users to collaborate with. There are options for CRUDing aforementioned projects.
+Users will be able to create projects and look for other users to collaborate with. 
+
+As an API the following options exist:
+
+* /:category - at the moment the current options are astronomy, biology, chemistry, computer science, environmental, engineering, physics, psychology. This will display all projects for their respective categories
+* /projects/new - create a new project
+* /projects/:id - view a single project based on ID given. ID is an object
+* /projects/:id/edit - edit a single project based on ID given
+* /sign-up - create a new user
+* /login - login
+* /logout - logout, cookies are cleared
+
+A test user and project can be found in the "test" folder.
 
 ### Installation
 Clone the repo and enter the following commands in the terminal:

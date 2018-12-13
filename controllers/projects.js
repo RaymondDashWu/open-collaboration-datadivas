@@ -1,5 +1,5 @@
 const Project = require('../models/project');
-
+const User = require('../models/user')
 module.exports = (app) => {
     // Render index of all projects
     app.get('/', (req, res) => {
@@ -25,10 +25,12 @@ module.exports = (app) => {
     });
 
     // TOFIX: Does not work with user authentication
-    app.post("/posts/new", (req, res) => {
+    app.post("/projects/new", (req, res) => {
+      console.log(req.user)
       if (req.user) {
         // console.log(req.body)
         var project = new Project(req.body);
+        var p;
         project.author = req.user._id;
         // console.log("LOOK HERE")
         // console.log(post.author)
@@ -37,10 +39,11 @@ module.exports = (app) => {
         project
           .save()
           .then(project => {
+            p = project
             return User.findById(req.user._id);
           })
           .then(user => {
-            user.projects.unshift(project);
+            user.projects.unshift(p);
             user.save();
             // REDIRECT TO THE NEW POST
             res.redirect(`/projects/${proj._id}`);

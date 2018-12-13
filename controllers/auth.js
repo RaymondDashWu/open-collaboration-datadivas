@@ -19,7 +19,7 @@ module.exports = (app) => {
     user.save().then((user) => {
         var token = jwt.sign({
           _id: user._id
-        }, process.env.SECRET, {
+        }, process.env.SECRETKEY, {
           expiresIn: "60 days"
         });
         res.cookie('nToken', token, {
@@ -68,7 +68,7 @@ module.exports = (app) => {
           const token = jwt.sign({
             _id: user._id,
             username: user.username
-          }, process.env.SECRET, {
+          }, process.env.SECRETKEY, {
             expiresIn: "60 days"
           });
           // Set a cookie and redirect to root
